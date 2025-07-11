@@ -14,10 +14,15 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
     // $posts = Post::with(['author', 'category'])->latest()->get();
+    $posts = Post::latest();
+
+    if (request('search')) {
+        $posts->where('title', 'like', '%' . request('search') . '%');
+    }
 
     return view('posts', [
         'title' => 'Blog',
-        'posts' => Post::all()
+        'posts' => $posts->get()
     ]);
 });
 
