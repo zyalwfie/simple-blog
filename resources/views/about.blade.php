@@ -1,14 +1,4 @@
-@extends('layouts.app')
-
-@section('title', $title)
-
-@section('content')
-    <p class="mt-4 text-gray-600">
-        This is the about page of our simple blog application. Here you can find information about our team and the purpose
-        of this blog.
-    </p>
-    <ul class="mt-6 space-y-2">
-        <li><strong>Team:</strong> Ziyad Alwafie</li>
-        <li><strong>Purpose:</strong> To share knowledge and insights on various topics.</li>
-    </ul>
-@endsection
+<x-layout :title="$title">
+    <p class="mt-2 text-gray-600">This page contains information about the application, its purpose, and how to use it.</p>
+    <p class="mt-2 text-gray-600">Feel free to explore the other pages for more details.</p>
+</x-layout>
