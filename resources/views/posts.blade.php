@@ -4,7 +4,7 @@
             <article class="border-b border-gray-500 py-8">
                 <h2 class="text-2xl font-bold text-gray-900">{{ $post['title'] }}</h2>
                 <div class="text-base text-gray-500">
-                    <a href="#">{{ $post['author'] }}</a> | 1 January 2025
+                    <a href="/authors/{{ $post->author->id }}" class="hover:underline">{{ $post->author->name }}</a> | 1 January 2025
                 </div>
                 <p class="my-4 font-light">{{ Str::limit($post['body'], 100) }}</p>
                 <a href="/posts/{{ $post['slug'] }}"
