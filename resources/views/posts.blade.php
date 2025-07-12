@@ -26,7 +26,7 @@
         </form>
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            @foreach ($posts as $post)
+            @forelse ($posts as $post)
                 <article
                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex justify-between items-center mb-5 text-gray-500">
@@ -66,7 +66,12 @@
                         </a>
                     </div>
                 </article>
-            @endforeach
+            @empty
+                <div class="text-center">
+                    <h3 class="text-gray-500 dark:text-gray-400 text-2xl mb-4">No posts found.</h3>
+                    <a href="/posts" class="px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-800 text-white">Back to all posts</a>
+                </div>
+            @endforelse
         </div>
     </div>
 </x-layout>
